@@ -1,0 +1,44 @@
+{
+  "name": "pixtech-blog-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pixelhearts/pixtech-blog-template.git",
+  "author": "daichi_sato",
+  "license": "MIT",
+  "scripts": {
+    "wp-env": "wp-env",
+    "wp-start": "wp-env start",
+    "wp-stop": "wp-env stop",
+    "wp-update": "wp-env start --update",
+    "lint": "run-p -l -c lint:*",
+    "lint:stylelint": "stylelint **/*.{css,scss}",
+    "lint:eslint": "eslint src/js/**/*.js",
+    "lint:prettier": "prettier --check .",
+    "fix": "run-s -l -c fix:stylelint fix:eslint fix:prettier",
+    "fix:stylelint": "stylelint --fix **/*.{css,scss}",
+    "fix:eslint": "eslint --fix .",
+    "fix:prettier": "prettier --write ."
+  },
+  "devDependencies": {
+    "@wordpress/env": "4.5.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.5.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-prettier": "^2.0.0"
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100,
+    "tabWidth": 2
+  },
+  "volta": {
+    "node": "16.14.0"
+  }
+}

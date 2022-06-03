@@ -1,0 +1,21 @@
+{
+  "plugins": ["stylelint-prettier"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order",
+    "stylelint-prettier/recommended",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "font-family-no-duplicate-names": true,
+    "selector-class-pattern": "^[-a-z]",
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": ["box"]
+      }
+    ]
+  },
+  "ignoreFiles": ["**/node_modules/**"]
+}

@@ -1,0 +1,13 @@
+{
+  "core": "https://ja.wordpress.org/latest-ja.zip",
+  "themes": ["./theme"],
+  "plugins": [],
+  "mappings": {
+    "wp-content/ai1wm-backups": "./ai1wm-backups",
+    "wp-content/uploads": "./uploads"
+  },
+  "config": {
+    "WP_DEBUG": true,
+    "WP_DEBUG_LOG": true
+  }
+}

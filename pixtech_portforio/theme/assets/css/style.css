@@ -9,6 +9,7 @@
   --font-color-dark: #2e1e0f;
   --font-color-light: #fff;
   --background-color-main: #6d8b74;
+  --background-color-sub: #faf8f2;
 }
 
 *,
@@ -21,6 +22,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--main-font-color);
+  background-color: var(--background-color-sub);
   font-size: 16px;
 }
 
@@ -56,7 +58,7 @@ img {
 
 .header {
   position: sticky;
-  top: 0;
+  top: 15px;
   z-index: 999;
 }
 
@@ -67,6 +69,7 @@ img {
   width: min(calc(100% - 15px * 2), 1024px);
   margin: 0 auto;
   position: relative;
+  padding: 18px 0;
 }
 
 .header .logo {
@@ -77,15 +80,11 @@ img {
 }
 
 .header .nav {
+  display: flex;
+  align-items: center;
 }
 
 .header .nav-list {
-  transform: translateX(100%);
-  position: fixed;
-  display: flex;
-  top: 0;
-  right: 0;
-  height: 100vh;
   transition: all 0.3s;
 }
 
@@ -97,6 +96,10 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.header .nav-list.is-open li + li {
+  margin-top: 5vh;
 }
 
 .header .nav-toggle {
@@ -153,18 +156,43 @@ img {
   /* color: ; */
 }
 
-/* SP版のみのデザイン */
-@media not all only screen and (min-width: 768px) {
+/* SPのみのデザイン */
+@media not all and (min-width: 768px) {
   .header .nav-list {
-    display: none;
     height: 100vh;
+    transform: translateX(100%);
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+  }
+
+  .header .nav-toggle {
+    display: block;
+  }
+}
+/* SP以外のデザイン */
+@media only screen and (min-width: 768px) {
+  .header .nav-toggle {
+    display: none;
+  }
+
+  .header .nav-list {
+    left: calc(50% - 200px);
+    position: absolute;
+    display: flex;
+  }
+
+  .header .nav-list li {
+    min-width: 100px;
+    text-align: center;
   }
 }
 
-/* タブレット版 */
+/* タブレットのみのデザイン */
 @media only screen (min-width: 768px) and (max-width: 1023px) {
 }
 
-/* PCデザイン */
+/* PCのみのデザイン */
 @media only screen and (min-width: 1024px) {
 }

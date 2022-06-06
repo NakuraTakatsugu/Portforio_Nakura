@@ -22,7 +22,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: var(--main-font-color);
+  color: var(--font-color-dark);
   background-color: var(--background-color-sub);
   font-size: 16px;
 }
@@ -126,7 +126,6 @@ img {
 .flame-text .text {
   position: absolute;
   left: 7.5px;
-  bottom: 10px;
   height: auto;
   width: 50vw;
 }
@@ -141,7 +140,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(calc(100% - 30px * 2), 1024px);
+  width: min(calc(100% - 30px * 2), 1060px);
   margin: 0 auto;
   position: relative;
   padding: 16px 0;
@@ -224,24 +223,22 @@ img {
 }
 
 /* first-view */
-.first-view {
+.first-view .overlay {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  top: 0;
   background-image: url('../img/hero-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   opacity: 0.8;
-  z-index: 3;
 }
 
-.first-view .overlay {
-  z-index: 3;
+.first-view .overlay::before {
   position: absolute;
   display: block;
+  content: '';
   width: 100%;
   height: 100%;
   background: #000;
@@ -249,13 +246,21 @@ img {
   pointer-events: none;
 }
 
-.first-view .hero-text {
+.first-view .hero-message {
   position: absolute;
-  z-index: 4;
-  top: 20%;
-  left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  width: max(54%, 240px);
+  margin: 0 auto;
+  top: 20vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
   font-family: var(--font-family-emphasis);
 }
+
+/* sections */
 
 /* footer */
 .footer {
@@ -270,6 +275,10 @@ img {
 
   .page-flame .flame-edge.horizontal {
     height: 10px;
+  }
+
+  .flame-text .text {
+    bottom: 8px;
   }
 
   .header {
@@ -293,15 +302,15 @@ img {
     display: block;
   }
 
-  .first-view .hero-text {
+  .first-view .hero-message {
     font-size: 40px;
   }
 
-  .first-view .hero-text .sp-break {
+  .first-view .hero-message .sp-break {
     display: inline;
   }
 
-  .first-view .hero-text .pc-break {
+  .first-view .hero-message .pc-break {
     display: none;
   }
 }
@@ -313,6 +322,10 @@ img {
 
   .page-flame .flame-edge.horizontal {
     height: 15px;
+  }
+
+  .flame-text .text {
+    bottom: 10px;
   }
 
   .header {
@@ -334,25 +347,25 @@ img {
     text-align: center;
   }
 
-  .first-view .hero-text .sp-break {
+  .first-view .hero-message .sp-break {
     display: none;
   }
 
-  .first-view .hero-text .pc-break {
+  .first-view .hero-message .pc-break {
     display: inline;
   }
 }
 
 /* タブレットのみのデザイン */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .first-view .hero-text {
+  .first-view .hero-message {
     font-size: 60px;
   }
 }
 
 /* PCのみのデザイン */
 @media only screen and (min-width: 1024px) {
-  .first-view .hero-text {
+  .first-view .hero-message {
     font-size: 80px;
   }
 }

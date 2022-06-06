@@ -6,6 +6,7 @@
 }
 
 :root {
+  --font-family-emphasis: 'Aqum two', sans-serif;
   --font-color-dark: #2e1e0f;
   --font-color-light: #fff;
   --background-color-main: #6d8b74;
@@ -28,6 +29,8 @@ body {
 
 header + div {
   flex: 1;
+  position: relative;
+  top: -60px;
 }
 
 main {
@@ -117,6 +120,7 @@ img {
   height: 100%;
   pointer-events: none;
   display: block;
+  z-index: 4;
 }
 
 .flame-text .text {
@@ -130,7 +134,6 @@ img {
 /* header */
 .header {
   position: sticky;
-  top: 15px;
   z-index: 999;
 }
 
@@ -220,6 +223,41 @@ img {
   background-color: var(--font-color-light);
 }
 
+/* first-view */
+.first-view {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  background-image: url('../img/hero-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.8;
+  z-index: 3;
+}
+
+.first-view .overlay {
+  z-index: 3;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.first-view .hero-text {
+  position: absolute;
+  z-index: 4;
+  top: 20%;
+  left: 10%;
+  font-family: var(--font-family-emphasis);
+}
+
+/* footer */
 .footer {
   /* color: ; */
 }
@@ -254,6 +292,18 @@ img {
   .header .nav-toggle {
     display: block;
   }
+
+  .first-view .hero-text {
+    font-size: 40px;
+  }
+
+  .first-view .hero-text .sp-break {
+    display: inline;
+  }
+
+  .first-view .hero-text .pc-break {
+    display: none;
+  }
 }
 /* SP以外のデザイン */
 @media only screen and (min-width: 768px) {
@@ -283,12 +333,26 @@ img {
     min-width: 100px;
     text-align: center;
   }
+
+  .first-view .hero-text .sp-break {
+    display: none;
+  }
+
+  .first-view .hero-text .pc-break {
+    display: inline;
+  }
 }
 
 /* タブレットのみのデザイン */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .first-view .hero-text {
+    font-size: 60px;
+  }
 }
 
 /* PCのみのデザイン */
 @media only screen and (min-width: 1024px) {
+  .first-view .hero-text {
+    font-size: 80px;
+  }
 }

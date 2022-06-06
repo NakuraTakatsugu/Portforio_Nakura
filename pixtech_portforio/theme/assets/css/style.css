@@ -152,3 +152,19 @@ img {
 .footer {
   /* color: ; */
 }
+
+/* SP版のみのデザイン */
+@media not all only screen and (min-width: 768px) {
+  .header .nav-list {
+    display: none;
+    height: 100vh;
+  }
+}
+
+/* タブレット版 */
+@media only screen (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* PCデザイン */
+@media only screen and (min-width: 1024px) {
+}

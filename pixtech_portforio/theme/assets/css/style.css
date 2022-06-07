@@ -23,14 +23,12 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--font-color-dark);
-  background-color: var(--background-color-sub);
+  background-color: #fff;
   font-size: 16px;
 }
 
 header + div {
   flex: 1;
-  position: relative;
-  top: -60px;
 }
 
 main {
@@ -132,8 +130,10 @@ img {
 
 /* header */
 .header {
-  position: sticky;
+  position: fixed;
   z-index: 999;
+  left: 0;
+  right: 0;
 }
 
 .header .inner {
@@ -248,15 +248,12 @@ img {
 
 .first-view .hero-message {
   position: absolute;
-  display: flex;
-  justify-content: flex-start;
   text-align: left;
-  width: max(54%, 240px);
+  width: min(82%, 780px);
   margin: 0 auto;
   top: 20vh;
   left: 0;
   right: 0;
-  bottom: 0;
   font-family: var(--font-family-emphasis);
 }
 
@@ -306,11 +303,11 @@ img {
     font-size: 40px;
   }
 
-  .first-view .hero-message .sp-break {
+  .sp-break {
     display: inline;
   }
 
-  .first-view .hero-message .pc-break {
+  .pc-break {
     display: none;
   }
 }
@@ -347,11 +344,11 @@ img {
     text-align: center;
   }
 
-  .first-view .hero-message .sp-break {
+  .sp-break {
     display: none;
   }
 
-  .first-view .hero-message .pc-break {
+  .pc-break {
     display: inline;
   }
 }

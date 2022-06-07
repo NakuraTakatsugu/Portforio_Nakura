@@ -258,6 +258,94 @@ img {
 }
 
 /* sections */
+.section.about-this-site {
+  background-color: var(--background-color-main);
+}
+
+.section.about-me,
+.section.skills,
+.section.works {
+  background-color: var(--background-color-sub);
+}
+
+.section .inner {
+  display: flex;
+  flex-direction: column;
+  width: min(82%, 780px);
+  margin: 0 auto;
+  position: relative;
+  z-index: 4;
+  padding: 60px 0 60px;
+}
+
+.section .headline {
+  font-family: var(--font-family-emphasis);
+  display: flex;
+}
+
+.section .subhead {
+  color: var(--font-color-dark);
+}
+
+.section.about-this-site .headline {
+  color: var(--font-color-light);
+}
+
+.section.about-me .headline,
+.section.skills .headline,
+.section.works .headline {
+  color: var(--background-color-main);
+}
+
+.section .contents-wrap {
+  margin-top: 60px;
+  width: min(98%, 780px);
+  display: flex;
+}
+
+.section.about-this-site .text {
+  width: min(98%, 450px);
+  margin: 0 auto;
+}
+
+.section.about-me .contents-wrap {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section.about-me .name {
+  font-size: 24px;
+}
+
+.section.about-me .small-letter {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.section.about-me .detail {
+  margin-top: 26px;
+}
+
+.section.about-me .avatar {
+  width: 260px;
+  height: 260px;
+}
+
+.section.skills .skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  justify-content: space-between;
+  column-gap: 14%;
+}
+
+.section.skills .icon {
+  width: 128px;
+}
+
+.section.skills .icon {
+  height: auto;
+}
 
 /* footer */
 .footer {
@@ -310,6 +398,32 @@ img {
   .pc-break {
     display: none;
   }
+
+  .section .headline {
+    font-family: var(--font-family-emphasis);
+    font-size: 28px;
+    flex-direction: column;
+  }
+
+  .section .subhead {
+    font-size: 20px;
+  }
+
+  .section.section.about-me .contents-wrap {
+    flex-direction: column-reverse;
+  }
+
+  .section.section.about-me .introduce {
+    margin-top: 30px;
+  }
+
+  .section.section.about-me .introduce {
+    width: min(100%, 450px);
+  }
+
+  .section.skills .icon {
+    width: 100px;
+  }
 }
 /* SP以外のデザイン */
 @media only screen and (min-width: 768px) {
@@ -351,6 +465,26 @@ img {
   .pc-break {
     display: inline;
   }
+
+  .section .headline {
+    align-items: center;
+  }
+
+  .section .subhead {
+    margin-left: 40px;
+  }
+
+  .section .contents-wrap {
+    padding: 0 40px;
+  }
+
+  .section.about-me .introduce {
+    width: min(50%, 350px);
+  }
+
+  .section.skills .icon {
+    width: 128px;
+  }
 }
 
 /* タブレットのみのデザイン */
@@ -358,11 +492,27 @@ img {
   .first-view .hero-message {
     font-size: 60px;
   }
+
+  .section .headline {
+    font-size: 40px;
+  }
+
+  .section .subhead {
+    font-size: 20px;
+  }
 }
 
 /* PCのみのデザイン */
 @media only screen and (min-width: 1024px) {
   .first-view .hero-message {
     font-size: 80px;
+  }
+
+  .section .headline {
+    font-size: 48px;
+  }
+
+  .section .subhead {
+    font-size: 24px;
   }
 }

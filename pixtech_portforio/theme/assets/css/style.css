@@ -335,15 +335,11 @@ img {
   display: flex;
   flex-wrap: wrap;
   row-gap: 40px;
-  justify-content: space-between;
   column-gap: 14%;
 }
 
 .section.skills .icon {
   width: 128px;
-}
-
-.section.skills .icon {
   height: auto;
 }
 
@@ -421,6 +417,10 @@ img {
     width: min(100%, 450px);
   }
 
+  .section.skills .skill-icons {
+    justify-content: space-around;
+  }
+
   .section.skills .icon {
     width: 100px;
   }
@@ -480,6 +480,10 @@ img {
 
   .section.about-me .introduce {
     width: min(50%, 350px);
+  }
+
+  .section.skills .skill-icons {
+    justify-content: space-between;
   }
 
   .section.skills .icon {

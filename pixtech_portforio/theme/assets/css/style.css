@@ -98,6 +98,12 @@ img {
 .mySwiper-gallery .swiper-slide-thumb-active {
   opacity: 1;
 }
+
+.button {
+  padding: 22px;
+  line-height: 1;
+  border-radius: 4px;
+}
 /* page-flame */
 .page-flame {
   position: fixed;
@@ -323,11 +329,8 @@ img {
   display: flex;
 }
 
-.section .subhead {
-  color: var(--font-color-dark);
-}
-
-.section.about-this-site .headline {
+.section.about-this-site .headline,
+.section.contact .headline {
   color: var(--font-color-light);
 }
 
@@ -337,9 +340,19 @@ img {
   color: var(--background-color-main);
 }
 
+.section.about-this-site .subhead,
+.section.about-me .subhead,
+.section.skills .subhead,
+.section.works .subhead {
+  color: var(--font-color-dark);
+}
+
+.section.contact .subhead {
+  color: var(--background-color-sub);
+}
+
 .section .contents-wrap {
   margin-top: 60px;
-  width: min(98%, 780px);
   display: flex;
 }
 
@@ -381,6 +394,46 @@ img {
 .section.skills .icon {
   width: 128px;
   height: auto;
+}
+
+.section.works .contents-wrap {
+  flex-direction: column;
+}
+
+.section.works .button-wrap {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.section.works .button {
+  border: 1px solid var(--font-color-dark);
+}
+
+.section.contact {
+  background-color: var(--background-color-light);
+}
+
+.section.contact .contents-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section.contact .text {
+  color: var(--font-color-light);
+  text-align: center;
+}
+
+.section.contact .button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.section.contact .button {
+  border: 1px solid var(--font-color-light);
+  color: var(--font-color-light);
 }
 
 /* footer */
@@ -445,15 +498,15 @@ img {
     font-size: 20px;
   }
 
-  .section.section.about-me .contents-wrap {
+  .section.about-me .contents-wrap {
     flex-direction: column-reverse;
   }
 
-  .section.section.about-me .introduce {
+  .section.about-me .introduce {
     margin-top: 30px;
   }
 
-  .section.section.about-me .introduce {
+  .section.about-me .introduce {
     width: min(100%, 450px);
   }
 
@@ -514,7 +567,8 @@ img {
     margin-left: 40px;
   }
 
-  .section .contents-wrap {
+  .section.about-me .contents-wrap,
+  .section.skills .contents-wrap {
     padding: 0 40px;
   }
 

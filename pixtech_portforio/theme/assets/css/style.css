@@ -58,6 +58,46 @@ img {
   flex-direction: column;
 }
 
+/* components */
+.swiper-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  aspect-ratio: 16/9;
+  background-color: var(--background-color-main);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  display: none;
+}
+
+.swiper-button-prev {
+  transform: rotateY(180deg);
+}
+
+.mySwiper-slider {
+  aspect-ratio: 16/ 9;
+  width: 100%;
+}
+
+.mySwiper-gallery {
+  margin-top: 6px;
+  width: 100%;
+  display: flex;
+}
+
+.mySwiper-gallery .swiper-slide {
+  width: 25%;
+  aspect-ratio: 16/9;
+  opacity: 0.4;
+}
+
+.mySwiper-gallery .swiper-slide-thumb-active {
+  opacity: 1;
+}
 /* page-flame */
 .page-flame {
   position: fixed;

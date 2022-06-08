@@ -11,6 +11,8 @@
   --font-color-light: #fff;
   --background-color-main: #6d8b74;
   --background-color-sub: #faf8f2;
+  --background-color-light: #a98467;
+  --background-color-dark: #6c584c;
 }
 
 *,
@@ -438,7 +440,24 @@ img {
 
 /* footer */
 .footer {
-  /* color: ; */
+  position: relative;
+  padding-bottom: 10px;
+  background-color: var(--background-color-dark);
+}
+
+.footer .inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: min(calc(100% - 30px * 2), 1060px);
+  margin: 0 auto;
+  position: relative;
+  padding: 42px 0;
+}
+
+.footer .term {
+  line-height: 1;
+  color: var(--font-color-light);
 }
 
 /* SPのみのデザイン */
@@ -582,6 +601,10 @@ img {
 
   .section.skills .icon {
     width: 128px;
+  }
+
+  .footer {
+    padding-bottom: 15px;
   }
 }
 

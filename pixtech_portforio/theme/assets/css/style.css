@@ -49,7 +49,6 @@ a {
 img {
   width: 100%;
   height: auto;
-  vertical-align: bottom;
 }
 
 /* page */
@@ -105,6 +104,15 @@ img {
   padding: 22px;
   line-height: 1;
   border-radius: 4px;
+}
+
+.button.light {
+  border: 1px solid var(--font-color-light);
+  color: var(--font-color-light);
+}
+
+.button.dark {
+  border: 1px solid var(--font-color-dark);
 }
 
 .fadeUp {
@@ -329,52 +337,53 @@ img {
   font-family: var(--font-family-emphasis);
 }
 
+.main {
+  background-color: var(--background-color-sub);
+}
+
 /* sections */
 .section.about-this-site {
   background-color: var(--background-color-main);
 }
 
-.section.about-me,
-.section.skills,
-.section.works {
-  background-color: var(--background-color-sub);
-}
-
-.section .inner {
+.main .inner {
   display: flex;
   flex-direction: column;
   width: min(82%, 780px);
   margin: 0 auto;
   position: relative;
   z-index: 4;
+}
+
+.section .inner {
   padding: 60px 0 60px;
 }
 
-.section .headline {
+.page-work .inner,
+.page-works .inner,
+.page-contact .inner {
+  padding: 120px 0 60px;
+}
+
+.headline {
   font-family: var(--font-family-emphasis);
   display: flex;
 }
 
-.section.about-this-site .headline,
-.section.contact .headline {
+.headline.light {
   color: var(--font-color-light);
 }
 
-.section.about-me .headline,
-.section.skills .headline,
-.section.works .headline {
+.headline.moderate {
   color: var(--background-color-main);
 }
 
-.section.about-this-site .subhead,
-.section.about-me .subhead,
-.section.skills .subhead,
-.section.works .subhead {
-  color: var(--font-color-dark);
+.subhead.light {
+  color: var(--background-color-sub);
 }
 
-.section.contact .subhead {
-  color: var(--background-color-sub);
+.subhead.dark {
+  color: var(--font-color-dark);
 }
 
 .section .contents-wrap {
@@ -430,10 +439,6 @@ img {
   margin-top: 60px;
   display: flex;
   justify-content: center;
-}
-
-.section.works .button {
-  border: 1px solid var(--font-color-dark);
 }
 
 .section.contact {
@@ -531,13 +536,13 @@ img {
     display: none;
   }
 
-  .section .headline {
+  .headline {
     font-family: var(--font-family-emphasis);
     font-size: 28px;
     flex-direction: column;
   }
 
-  .section .subhead {
+  .subhead {
     font-size: 20px;
   }
 
@@ -602,11 +607,11 @@ img {
     display: inline;
   }
 
-  .section .headline {
+  .headline {
     align-items: center;
   }
 
-  .section .subhead {
+  .subhead {
     margin-left: 40px;
   }
 
@@ -638,11 +643,11 @@ img {
     font-size: 60px;
   }
 
-  .section .headline {
+  .headline {
     font-size: 40px;
   }
 
-  .section .subhead {
+  .subhead {
     font-size: 20px;
   }
 }
@@ -653,11 +658,11 @@ img {
     font-size: 80px;
   }
 
-  .section .headline {
+  .headline {
     font-size: 48px;
   }
 
-  .section .subhead {
+  .subhead {
     font-size: 24px;
   }
 }

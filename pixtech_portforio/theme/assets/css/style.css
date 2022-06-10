@@ -31,6 +31,7 @@ body {
 
 header + div {
   flex: 1;
+  background-color: var(--background-color-sub);
 }
 
 main {
@@ -66,7 +67,6 @@ img {
 }
 
 .swiper-slide {
-  aspect-ratio: 16/9;
   background-color: var(--background-color-main);
 }
 
@@ -80,7 +80,6 @@ img {
 }
 
 .mySwiper-slider {
-  aspect-ratio: 16/ 9;
   width: 100%;
 }
 
@@ -94,10 +93,24 @@ img {
   width: 25%;
   aspect-ratio: 16/9;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .mySwiper-gallery .swiper-slide-thumb-active {
   opacity: 1;
+  cursor: inherit;
+}
+
+.mw_wp_form_input .input-hidden {
+  display: none;
+}
+
+.mw_wp_form_confirm .confirm-hidden {
+  display: none;
+}
+
+.mw_wp_form_complete .complete-hidden {
+  display: none;
 }
 
 .button {
@@ -115,10 +128,98 @@ img {
   border: 1px solid var(--font-color-dark);
 }
 
+.thumbnail {
+  display: flex;
+  aspect-ratio: 16/9;
+}
+
+.thumbnail.hover-zoom {
+  position: relative;
+  overflow: hidden;
+}
+
+.thumbnail.hover-zoom img {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+.thumbnail.hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+.thumbnail a {
+  width: 100%;
+  display: flex;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.thumbnail .overlay-text {
+  background-color: #000;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+  color: var(--font-color-light);
+}
+
+.thumbnail .overlay-text:hover {
+  opacity: 0.5;
+}
+
+.pagination-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin-top: 60px;
+}
+
+.pagination {
+  text-align: center;
+  cursor: pointer;
+}
+
+.pagination + .pagination {
+  margin-left: 10px;
+}
+
+.pagination.number {
+  color: var(--font-color-dark);
+  border-radius: 3px;
+  width: 30px;
+  line-height: 30px;
+}
+
+.pagination.is-active {
+  color: var(--font-color-light);
+  background-color: var(--background-color-main);
+  line-height: 30px;
+}
+
+.pagination.preview-button,
+.pagination.next-button {
+  display: block;
+  color: #558f54;
+}
+
+.pagination.next-button {
+  transform: rotateY(180deg);
+}
+
 .fadeUp {
   animation-name: fadeUpAnime;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.js-fadeUpTrigger {
   opacity: 0;
 }
 
@@ -132,10 +233,6 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.fadeUpTrigger {
-  opacity: 0;
 }
 
 /* page-flame */
@@ -337,10 +434,6 @@ img {
   font-family: var(--font-family-emphasis);
 }
 
-.main {
-  background-color: var(--background-color-sub);
-}
-
 /* sections */
 .section.about-this-site {
   background-color: var(--background-color-main);
@@ -360,7 +453,7 @@ img {
 }
 
 .page-work .inner,
-.page-works .inner,
+.page-archive-works .inner,
 .page-contact .inner {
   padding: 120px 0 60px;
 }
@@ -503,6 +596,63 @@ img {
 .page-work .icon {
   width: min(46%, 128px);
 }
+/* .page-archive-works */
+.page-archive-works .contents-wrap {
+  margin-top: 60px;
+}
+
+.page-archive-works .thumbnail-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* page-contact */
+.page-contact .contents-wrap {
+  margin-top: 60px;
+}
+
+.page-contact .input-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-contact .input-wrap + .input-wrap {
+  margin-top: 30px;
+}
+
+.page-contact .input {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 16px;
+  height: 36px;
+}
+
+.page-contact .input.inquiry {
+  height: 340px;
+}
+
+.page-contact .button-wrap {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.page-contact .button {
+  width: 190px;
+}
+
+.page-contact.complete .text {
+  padding: 60px 0;
+}
+
+.mw_wp_form_confirm .text {
+  margin-top: 26px;
+}
 
 /* footer */
 .footer {
@@ -602,6 +752,18 @@ img {
   .section.skills .icon {
     width: 100px;
   }
+
+  .page-archive-works .thumbnail {
+    width: 100%;
+  }
+
+  .page-contact .button-wrap {
+    flex-direction: column;
+  }
+
+  .page-contact .button + .button {
+    margin-top: 60px;
+  }
 }
 /* SP以外のデザイン */
 @media only screen and (min-width: 768px) {
@@ -667,6 +829,14 @@ img {
 
   .section.skills .icon {
     width: 128px;
+  }
+
+  .page-archive-works .thumbnail {
+    width: calc(50% - 10px);
+  }
+
+  .page-contact .button-wrap {
+    gap: 94px;
   }
 
   .footer {

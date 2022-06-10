@@ -37,7 +37,7 @@ $(function () {
   }
 
   function fadeAnime() {
-    const trigger = $('.fadeUpTrigger');
+    const trigger = $('.js-fadeUpTrigger');
     $(trigger).each(function () {
       let elementPosition = $(this).offset().top - 50;
       let scroll = $(window).scrollTop();

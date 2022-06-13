@@ -1,7 +1,14 @@
 {
   "core": "https://ja.wordpress.org/latest-ja.zip",
   "themes": ["./theme"],
-  "plugins": [],
+  "plugins": [
+    "https://import.wp-migration.com/all-in-one-wp-migration-file-extension.zip",
+    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.61.zip",
+    "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.12.2.zip",
+    "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.4.0.zip",
+    "https://downloads.wordpress.org/plugin/mw-wp-form.4.4.0.zip",
+    "https://downloads.wordpress.org/plugin/post-duplicator.2.28.zip"
+  ],
   "mappings": {
     "wp-content/ai1wm-backups": "./ai1wm-backups",
     "wp-content/uploads": "./uploads"

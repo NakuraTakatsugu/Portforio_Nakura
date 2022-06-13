@@ -2,6 +2,7 @@ $(function () {
   function changeToggleMenu() {
     const $toggleButton = $('.js-nav-toggle');
     const $navList = $('.js-nav-list');
+    const $navLink = $navList.find('a');
 
     function openHamburger() {
       $toggleButton.toggleClass('is-open');
@@ -11,9 +12,16 @@ $(function () {
       $navList.toggleClass('is-open');
     }
 
+    function closeOpenedNavigator() {
+      $($navLink).on('click', function (event) {
+        $($toggleButton).trigger('click');
+      });
+    }
+
     function init() {
       openHamburger();
       openNavigator();
+      closeOpenedNavigator();
     }
 
     $toggleButton.on('click', init);
@@ -21,6 +29,7 @@ $(function () {
 
   function activeSwiper() {
     const swiper = new Swiper('.mySwiper-gallery', {
+      speed: 800,
       spaceBetween: 6,
       slidesPerView: 4,
     });
@@ -29,6 +38,7 @@ $(function () {
       thumbs: {
         swiper: swiper,
       },
+      speed: 800,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

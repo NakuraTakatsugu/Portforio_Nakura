@@ -34,7 +34,7 @@
       <header class="header">
         <div class="inner">
           <h1 class="logo">
-            <a href="./index.html">NAKUPO!!</a>
+            <a href="<?php echo esc_url(home_url('/')) ; ?>">NAKUPO!!</a>
           </h1>
           <?php set_menu( 'header' , 'nav-list js-nav-list') ?>
           <button class="nav-toggle js-nav-toggle">

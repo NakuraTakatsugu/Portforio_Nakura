@@ -12,14 +12,14 @@
       </div>
     </div>
     <section class="section about-this-site">
-      <div class="inner js-fadeUpTrigger">
-        <div class="headline-wrap">
+      <div class="inner">
+        <div class="headline-wrap js-fadeUpTrigger">
           <h3 class="headline light">
             ABOUT <br class="sp-break" />THIS SITE
             <span class="subhead dark"> このサイトについて </span>
           </h3>
         </div>
-        <div class="contents-wrap">
+        <div class="contents-wrap js-fadeUpTrigger">
           <p class="text">
             テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
           </p>
@@ -27,13 +27,13 @@
       </div>
     </section>
     <section id="about" class="section about-me">
-      <div class="inner js-fadeUpTrigger">
-        <div class="headline-wrap">
+      <div class="inner">
+        <div class="headline-wrap js-fadeUpTrigger">
           <h3 class="headline moderate">
             ABOUT ME<span class="subhead dark">プロフィール</span>
           </h3>
         </div>
-        <div class="contents-wrap">
+        <div class="contents-wrap js-fadeUpTrigger">
           <div class="introduce">
             <div class="name-wrap">
               <p class="name">名倉 喬嗣<span class="small-letter">Nakura Takatsugu</span></p>
@@ -54,11 +54,11 @@
       </div>
     </section>
     <section id="skills" class="section skills">
-      <div class="inner js-fadeUpTrigger">
-        <div class="headline-wrap">
+      <div class="inner">
+        <div class="headline-wrap js-fadeUpTrigger">
           <h3 class="headline moderate">SKILLS<span class="subhead dark">スキル</span></h3>
         </div>
-        <div class="contents-wrap">
+        <div class="contents-wrap js-fadeUpTrigger">
           <ul class="skill-icons">
             <li class="icon">
               <img src="<?php echo esc_url( get_theme_file_uri() . '/assets/img/html_icon.svg' );?>" alt="html5" />
@@ -83,13 +83,13 @@
       </div>
     </section>
     <section class="section works">
-      <div class="inner js-fadeUpTrigger">
-        <div class="headline-wrap">
+      <div class="inner">
+        <div class="headline-wrap js-fadeUpTrigger">
           <h3 class="headline moderate">WORKS<span class="subhead dark">制作実績</span></h3>
         </div>
         <?php $the_query = customPostLoop( 'works',  '4', 'date', 'desc' , 1 );?>
         <?php if( $the_query -> have_posts() ) :?>
-        <div class="contents-wrap">
+        <div class="contents-wrap js-fadeUpTrigger">
           <div class="swiper mySwiper-slider">
             <div class="swiper-wrapper">
               <?php while( $the_query -> have_posts() ) : $the_query -> the_post() ; ?>

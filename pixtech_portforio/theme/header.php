@@ -21,7 +21,7 @@
         <div class="flame-edge right vertical"></div>
         <div class="flame-edge left vertical"></div>
       </div>
-      <div class="flame-text">
+      <div class="flame-text js-fadeUpTrigger">
         <div class="text">
           <object
             type="image/svg+xml"

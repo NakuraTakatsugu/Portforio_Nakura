@@ -98,13 +98,13 @@ img {
 .mySwiper-gallery .swiper-slide {
   width: 25%;
   aspect-ratio: 16/9;
-  transition: opacity 0.3s ease-in;
   cursor: pointer;
-  background-color: var(--background-color-sub);
+  background-color: #000;
 }
 
 .mySwiper-gallery .swiper-slide img {
   opacity: 0.4;
+  transition: opacity 0.3s ease-in;
 }
 
 .mySwiper-gallery .swiper-slide-thumb-active img {

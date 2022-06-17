@@ -56,7 +56,7 @@
 
   function echo_thumbnail(){
     if ( has_post_thumbnail() ):
-      the_post_thumbnail();
+      the_post_thumbnail("");
     else:
       $no_image_link = esc_url( get_template_directory_uri() );
       $html = "<img src='{$no_image_link}/assets/img/no-image.jpeg'";

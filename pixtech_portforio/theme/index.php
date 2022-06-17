@@ -96,7 +96,7 @@
               <div class="swiper-slide thumbnail hover-zoom">
                 <a href="<?php the_permalink(); ?>">
                   <?php  echo_thumbnail();?>
-                  <p class="overlay-text">制作実績</p>
+                  <p class="overlay-text"><?php trim_title_strings(30);?></p>
                 </a>
               </div>
               <?php endwhile; ?>

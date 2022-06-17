@@ -7,8 +7,9 @@
     "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.12.2.zip",
     "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.4.0.zip",
     "https://downloads.wordpress.org/plugin/mw-wp-form.4.4.0.zip",
-    "https://downloads.wordpress.org/plugin/post-duplicator.2.28.zip",
-    "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.12.1.zip"
+    "https://downloads.wordpress.org/plugin/wp-bulk-post-duplicator.1.2.zip",
+    "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.12.1.zip",
+    "https://downloads.wordpress.org/plugin/safe-svg.2.0.1.zip"
   ],
   "mappings": {
     "wp-content/ai1wm-backups": "./ai1wm-backups",

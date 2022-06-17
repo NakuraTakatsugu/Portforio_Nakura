@@ -99,19 +99,38 @@
       $html = "<ul class ='pagination-wrap'>";
         if ( $paged > 1 ) {
           $link = get_pagenum_link( $paged - 1 );
-          $text_before = "&lt;";
-          $html .= "<li class='pagination preview-button'><a href='{$link}'>{$text_before}</a></li>";
+          $image_link = get_theme_file_uri() . '/assets/img/Arrow-vector.svg';
+          $image_arrow = "<img src='{$image_link}' alt='前のページへ' />";
+          $html .= "<li class='pagination preview-button'><a href='{$link}'>{$image_arrow}</a></li>";
         }
         for ( $i = 1; $i <= $pages; $i++ ) {
           $html .= pagination_numbers( $pages , $paged ,$i);
         }
         if ( $paged < $pages ) {
           $link = get_pagenum_link( $paged + 1 );
-          $text_next = "&gt;";
-          $html .= "<li class='pagination next-button'><a href='{$link}'>{$text_next}</a></li>";
+          $image_link = get_theme_file_uri() . '/assets/img/Arrow-vector.svg';
+          $image_arrow = "<img src='{$image_link}' alt='次のページへ' />";
+          $html .= "<li class='pagination next-button'><a href='{$link}'>{$image_arrow}</a></li>";
         }
       $html .= '</ul>';
       echo $html;
     endif;
+  }
+
+  function echoFieldBody($fieldName){
+    $html = get_field($fieldName);
+    if($html):
+      echo $html;
+    endif;
+  }
+
+  function trim_title_strings( $trim_limit ){
+    global $post;
+    if( mb_strlen( $post->post_title, 'UTF-8' ) > $trim_limit ){
+      $title = mb_substr( $post->post_title, 0, $trim_limit, 'UTF-8' );
+      echo $title.'…';
+    }else{
+      echo $post->post_title;
+    }
   }
 ?>

@@ -13,7 +13,7 @@ $(function () {
     }
 
     function closeOpenedNavigator() {
-      $($navLink).on('click', function (event) {
+      $($navList).on('click', function (event) {
         $($toggleButton).trigger('click');
       });
     }

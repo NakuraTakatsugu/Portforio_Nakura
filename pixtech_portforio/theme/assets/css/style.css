@@ -595,6 +595,10 @@ img {
   margin-top: 60px;
 }
 
+.section.contact textarea {
+  height: 340px;
+}
+
 /* page-work */
 .page-work .contents-wrap {
   margin-top: 60px;

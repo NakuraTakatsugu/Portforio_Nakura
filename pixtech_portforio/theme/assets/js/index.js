@@ -66,10 +66,18 @@ $(function () {
       });
     }
 
-    $(window).on({
-      scroll: fadeUp,
-      load: fadeUp,
-    });
+    function setEvent() {
+      $(window).on({
+        scroll: fadeUp,
+        load: fadeUp,
+      });
+    }
+
+    function init() {
+      setEvent();
+    }
+
+    init();
   }
 
   function init() {

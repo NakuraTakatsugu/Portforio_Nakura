@@ -2,7 +2,6 @@ $(function () {
   function changeToggleMenu() {
     const $toggleButton = $('.js-nav-toggle');
     const $navList = $('.js-nav-list');
-    const $navLink = $navList.find('a');
 
     function openHamburger() {
       $toggleButton.toggleClass('is-open');
@@ -13,18 +12,26 @@ $(function () {
     }
 
     function closeOpenedNavigator() {
-      $($navList).on('click', function (event) {
-        $($toggleButton).trigger('click');
+      $toggleButton.removeClass('is-open');
+      $navList.removeClass('is-open');
+    }
+
+    function setEvent() {
+      $toggleButton.on({
+        click: function () {
+          openHamburger();
+          openNavigator();
+        },
       });
+
+      $navList.on('click', closeOpenedNavigator);
     }
 
     function init() {
-      openHamburger();
-      openNavigator();
-      closeOpenedNavigator();
+      setEvent();
     }
 
-    $toggleButton.on('click', init);
+    init();
   }
 
   function activeSwiper() {
@@ -56,19 +63,25 @@ $(function () {
         $(this).addClass('fadeUp');
       }
     });
-  }
 
-  function setEvent() {
-    $(window).on({
-      scroll: fadeAnime,
-      load: fadeAnime,
-    });
+    function setEvent() {
+      $(window).on({
+        scroll: fadeAnime,
+        load: fadeAnime,
+      });
+    }
+
+    function init() {
+      setEvent();
+    }
+
+    init();
   }
 
   function init() {
-    setEvent();
-    activeSwiper();
     changeToggleMenu();
+    activeSwiper();
+    fadeAnime();
   }
 
   init();

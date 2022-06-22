@@ -53,29 +53,29 @@ $(function () {
     });
   }
 
-  function fadeAnime() {
-    const trigger = $('.js-fadeUpTrigger');
-    $(trigger).each(function () {
-      let elementPosition = $(this).offset().top - 50;
-      let scroll = $(window).scrollTop();
-      let windowHeight = $(window).height();
-      if (scroll >= elementPosition - windowHeight) {
-        $(this).addClass('fadeUp');
-      }
-    });
-  }
+  function animationFadeUp() {
+    function fadeUp() {
+      const trigger = $('.js-fadeUpTrigger');
+      $(trigger).each(function () {
+        let elementPosition = $(this).offset().top - 50;
+        let scroll = $(window).scrollTop();
+        let windowHeight = $(window).height();
+        if (scroll >= elementPosition - windowHeight) {
+          $(this).addClass('fadeUp');
+        }
+      });
+    }
 
-  function setAnimationEvent() {
     $(window).on({
-      scroll: fadeAnime,
-      load: fadeAnime,
+      scroll: fadeUp,
+      load: fadeUp,
     });
   }
 
   function init() {
     changeToggleMenu();
     activeSwiper();
-    setAnimationEvent();
+    animationFadeUp();
   }
 
   init();

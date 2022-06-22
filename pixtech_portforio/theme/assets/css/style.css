@@ -508,6 +508,10 @@ img {
   color: var(--background-color-main);
 }
 
+.subhead {
+  line-height: 2;
+}
+
 .subhead.light {
   color: var(--background-color-sub);
 }

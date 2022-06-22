@@ -63,25 +63,19 @@ $(function () {
         $(this).addClass('fadeUp');
       }
     });
+  }
 
-    function setEvent() {
-      $(window).on({
-        scroll: fadeAnime,
-        load: fadeAnime,
-      });
-    }
-
-    function init() {
-      setEvent();
-    }
-
-    init();
+  function setAnimationEvent() {
+    $(window).on({
+      scroll: fadeAnime,
+      load: fadeAnime,
+    });
   }
 
   function init() {
     changeToggleMenu();
     activeSwiper();
-    fadeAnime();
+    setAnimationEvent();
   }
 
   init();

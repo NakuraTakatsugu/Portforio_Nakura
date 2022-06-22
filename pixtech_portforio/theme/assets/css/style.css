@@ -347,6 +347,7 @@ img {
   position: absolute;
   left: 7.5px;
   width: 50vw;
+  max-width: 720px;
   height: auto;
 }
 

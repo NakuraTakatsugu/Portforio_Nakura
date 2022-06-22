@@ -143,11 +143,14 @@ img {
 }
 
 .button.light {
+  color: var(--font-color-light);
+  background-color: var(--background-color-light);
   border: 1px solid var(--font-color-light);
   color: var(--font-color-light);
 }
 
 .button.dark {
+  background-color: var(--background-color-sub);
   border: 1px solid var(--font-color-dark);
 }
 

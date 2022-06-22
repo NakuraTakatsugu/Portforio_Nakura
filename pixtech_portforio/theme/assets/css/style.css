@@ -253,7 +253,7 @@ img {
 
 .fadeUp {
   opacity: 0;
-  animation-name: fadeUpAnime;
+  animation-name: fade-up-anime;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }

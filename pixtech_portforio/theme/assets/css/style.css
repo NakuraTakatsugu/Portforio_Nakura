@@ -670,6 +670,7 @@ img {
 .section.about-me .detail {
   margin-top: 26px;
   line-height: 1.5;
+  letter-spacing: 1px;
 }
 
 .section.about-me .avatar {

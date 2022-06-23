@@ -607,6 +607,7 @@ img {
 
 .page-contact .input.inquiry {
   height: 340px;
+  resize: vertical;
 }
 
 .page-contact .button-wrap {

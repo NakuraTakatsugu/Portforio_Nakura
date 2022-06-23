@@ -645,6 +645,8 @@ img {
 .section.about-this-site .text {
   width: min(98%, 450px);
   margin: 0 auto;
+  line-height: 1.5;
+  letter-spacing: 1px;
 }
 
 .section.about-me .contents-wrap {
@@ -663,6 +665,7 @@ img {
 
 .section.about-me .detail {
   margin-top: 26px;
+  line-height: 1.5;
 }
 
 .section.about-me .avatar {

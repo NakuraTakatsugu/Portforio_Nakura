@@ -133,4 +133,11 @@
       echo $post->post_title;
     }
   }
+
+  function isInHome () {
+    if ( is_home() || is_front_page() ) :
+      $class = "is-in-home";
+      return $class;
+    endif;
+  }
 ?>

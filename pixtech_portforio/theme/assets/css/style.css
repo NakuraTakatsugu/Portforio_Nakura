@@ -357,12 +357,16 @@ img {
   right: 0;
   left: 0;
   z-index: 5;
+  background-color: rgb(251 248 243 / 80%);
   transition: background-color 0.8s;
 }
 
-.header.is-scrolled {
+.header.is-in-home {
+  background-color: rgb(251 248 243 / 0%);
+}
+
+.header.is-in-home.is-scrolled {
   background-color: rgb(251 248 243 / 80%);
-  transition: background-color 0.8s;
 }
 
 .header .inner {

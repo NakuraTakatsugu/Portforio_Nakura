@@ -31,7 +31,7 @@
           ></object>
         </div>
       </div>
-      <header class="header">
+      <header class="header js-header">
         <div class="inner">
           <h1 class="logo">
             <a href="<?php echo esc_url(home_url('/')) ; ?>">NAKUPO!!</a>

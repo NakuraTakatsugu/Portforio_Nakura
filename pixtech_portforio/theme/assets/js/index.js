@@ -1,3 +1,5 @@
+'use strict';
+
 $(function () {
   function changeToggleMenu() {
     const $toggleButton = $('.js-nav-toggle');
@@ -34,6 +36,19 @@ $(function () {
     init();
   }
 
+  function changeHeader() {
+    const $header = $('.js-header');
+    $(window).on('scroll', function () {
+      let scroll = $(window).scrollTop();
+      let windowHeight = $(window).height();
+      if (windowHeight < scroll + 80) {
+        $header.addClass('is-scrolled');
+      } else {
+        $header.removeClass('is-scrolled');
+      }
+    });
+  }
+
   function activeSwiper() {
     const swiper = new Swiper('.mySwiper-gallery', {
       speed: 800,
@@ -55,8 +70,8 @@ $(function () {
 
   function animationFadeUp() {
     function fadeUp() {
-      const trigger = $('.js-fadeUpTrigger');
-      $(trigger).each(function () {
+      const $trigger = $('.js-fadeUpTrigger');
+      $trigger.each(function () {
         let elementPosition = $(this).offset().top - 50;
         let scroll = $(window).scrollTop();
         let windowHeight = $(window).height();
@@ -82,6 +97,7 @@ $(function () {
 
   function init() {
     changeToggleMenu();
+    changeHeader();
     activeSwiper();
     animationFadeUp();
   }

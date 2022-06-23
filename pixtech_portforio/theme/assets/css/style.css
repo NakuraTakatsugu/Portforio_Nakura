@@ -507,7 +507,7 @@ img {
 }
 
 .headline.light {
-  color: var(--font-color-light);
+  color: var(--background-color-sub);
 }
 
 .headline.moderate {
@@ -706,7 +706,7 @@ img {
 }
 
 .section.contact .text {
-  color: var(--font-color-light);
+  color: var(--background-color-sub);
   text-align: center;
 }
 

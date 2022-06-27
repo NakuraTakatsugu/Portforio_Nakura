@@ -8,14 +8,14 @@ Template Name: archive-works
   <main class="main">
     <div class="inner">
       <div class="headline-wrap">
-        <h3 class="headline moderate">
+        <h3 class="headline moderate js-fadeUpTrigger">
           WORKS
           <span class="subhead dark">制作実績</span>
         </h3>
       </div>
       <?php $the_query = customPostLoop( 'works',  '6', 'date', 'desc' , max( 1, get_query_var('paged') ) );?>
       <?php if( $the_query -> have_posts() ) : ?>
-      <div class="contents-wrap">
+      <div class="contents-wrap js-fadeUpTrigger">
         <div class="thumbnail-wrap">
         <?php  while( $the_query -> have_posts() ) : $the_query -> the_post() ;?>
           <div class="thumbnail hover-zoom">

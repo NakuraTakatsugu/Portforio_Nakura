@@ -1,8 +1,9 @@
+'use strict';
+
 $(function () {
   function changeToggleMenu() {
     const $toggleButton = $('.js-nav-toggle');
     const $navList = $('.js-nav-list');
-    const $navLink = $navList.find('a');
 
     function openHamburger() {
       $toggleButton.toggleClass('is-open');
@@ -13,18 +14,39 @@ $(function () {
     }
 
     function closeOpenedNavigator() {
-      $($navLink).on('click', function (event) {
-        $($toggleButton).trigger('click');
+      $toggleButton.removeClass('is-open');
+      $navList.removeClass('is-open');
+    }
+
+    function setEvent() {
+      $toggleButton.on({
+        click: function () {
+          openHamburger();
+          openNavigator();
+        },
       });
+
+      $navList.on('click', closeOpenedNavigator);
     }
 
     function init() {
-      openHamburger();
-      openNavigator();
-      closeOpenedNavigator();
+      setEvent();
     }
 
-    $toggleButton.on('click', init);
+    init();
+  }
+
+  function changeHeader() {
+    const $header = $('.js-header');
+    $(window).on('scroll', function () {
+      let scroll = $(window).scrollTop();
+      let windowHeight = $(window).height();
+      if (windowHeight < scroll + 80) {
+        $header.addClass('is-scrolled');
+      } else {
+        $header.removeClass('is-scrolled');
+      }
+    });
   }
 
   function activeSwiper() {
@@ -46,29 +68,38 @@ $(function () {
     });
   }
 
-  function fadeAnime() {
-    const trigger = $('.js-fadeUpTrigger');
-    $(trigger).each(function () {
-      let elementPosition = $(this).offset().top - 50;
-      let scroll = $(window).scrollTop();
-      let windowHeight = $(window).height();
-      if (scroll >= elementPosition - windowHeight) {
-        $(this).addClass('fadeUp');
-      }
-    });
-  }
+  function animationFadeUp() {
+    function fadeUp() {
+      const $trigger = $('.js-fadeUpTrigger');
+      $trigger.each(function () {
+        let elementPosition = $(this).offset().top - 50;
+        let scroll = $(window).scrollTop();
+        let windowHeight = $(window).height();
+        if (scroll >= elementPosition - windowHeight) {
+          $(this).addClass('fadeUp');
+        }
+      });
+    }
 
-  function setEvent() {
-    $(window).on({
-      scroll: fadeAnime,
-      load: fadeAnime,
-    });
+    function setEvent() {
+      $(window).on({
+        scroll: fadeUp,
+        load: fadeUp,
+      });
+    }
+
+    function init() {
+      setEvent();
+    }
+
+    init();
   }
 
   function init() {
-    setEvent();
-    activeSwiper();
     changeToggleMenu();
+    changeHeader();
+    activeSwiper();
+    animationFadeUp();
   }
 
   init();
